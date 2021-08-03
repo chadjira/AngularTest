@@ -9,21 +9,21 @@ import { IForm } from '../formMdel';
   styleUrls: ['./create-form.component.scss']
 })
 export class CreateFormComponent implements OnInit {
-  baseUrl:string = 'http://localhost:3000/forms';
+  baseUrl: string = 'http://localhost:3000/forms';
 
-  forms:IForm={};
-  newForm:IForm={};
+  forms: IForm = {};
+  newForm: IForm = {};
   constructor(
-    private http:HttpClient,
-    private router:Router
+    private http: HttpClient,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
   }
-  addNewProduct(){
-   
-    this.http.post(this.baseUrl,this.newForm).subscribe(
-      data=> {this.router.navigate(['/'])}
+  addNewProduct() {
+
+    this.http.post(this.baseUrl, this.newForm).subscribe(
+      data => { this.router.navigate(['/']) }
     )
   }
 
